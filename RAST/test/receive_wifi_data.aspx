@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="receive_wifi_data.aspx.cs" Inherits="services_receive_wifi_data" %>

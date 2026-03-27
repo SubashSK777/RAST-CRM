@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="deleteCommandFile.aspx.cs" Inherits="services_deleteCommandFile" %>

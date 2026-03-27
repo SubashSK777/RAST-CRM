@@ -1,0 +1,91 @@
+/* --------------------------------------------------- */
+/* SIDEBAR BEHAVIOR FIXES (Strict AdminLTE Compliance) */
+/* --------------------------------------------------- */
+
+/* 1. Global: Allow text wrapping in normal expanded state ONLY */
+/* This prevents "vertical text" bug when hovering over collapsed sidebar */
+body:not(.sidebar-collapse) .nav-sidebar .nav-link p {
+    white-space: normal !important;
+    word-wrap: break-word;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+/* 2. COLLAPSED STATE (Only when NOT HOVERED) */
+
+/* Hide Text Labels */
+body.sidebar-collapse .main-sidebar:not(:hover) .brand-text,
+body.sidebar-collapse .main-sidebar:not(:hover) .user-panel .info,
+body.sidebar-collapse .main-sidebar:not(:hover) .nav-sidebar .nav-link p,
+body.sidebar-collapse .main-sidebar:not(:hover) .nav-header {
+    display: none !important;
+}
+
+/* SEARCH BAR: Hide Input, Keep Icon centered */
+body.sidebar-collapse .main-sidebar:not(:hover) .form-control-sidebar {
+    display: none !important;
+}
+
+body.sidebar-collapse .main-sidebar:not(:hover) .input-group-append {
+    display: flex !important;
+    justify-content: center;
+    width: 100%;
+}
+
+body.sidebar-collapse .main-sidebar:not(:hover) .btn-sidebar {
+    width: 100%;
+    border: none;
+}
+
+/* LOGO: Shrink and Center */
+body.sidebar-collapse .main-sidebar:not(:hover) .brand-link {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+body.sidebar-collapse .main-sidebar:not(:hover) .brand-link .brand-image {
+    float: none;
+    margin: 0;
+    display: inline-block;
+}
+
+/* ICONS: Ensure they don't look weird (Resetting any shifting) */
+/* Note: AdminLTE handles icon centering in collapsed mode natively via padding. 
+   We DO NOT force text-align:center on nav-link to avoid breaking hover alignment. */
+
+
+.nav-sidebar .has-treeview>a {
+    align-items: center;
+}
+
+.nav-sidebar .nav-icon {
+    margin-right: 8px !important;
+}
+
+.nav-sidebar .right {
+    right: 10px !important;
+}
+
+.page-wrapper-box {
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #d3d3d3;
+    padding: 20px;
+    margin: 10px;
+    min-height: calc(100vh - 120px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+}
+
+.content-header h1 {
+    margin-left: 8px;
+}
+
+.content-header {
+    margin-bottom: 15px;
+}
+
+.breadcrumb {
+    margin-top: 5px;
+}

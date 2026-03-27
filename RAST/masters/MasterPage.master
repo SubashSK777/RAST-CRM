@@ -1,0 +1,169 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="masters_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RodentEye</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="/css/custom_global.css">
+
+
+     <!-- Bootstrap 3.3.2
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
+   
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Morris chart -->
+    <link href="/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- jvectormap -->
+    <link href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker -->
+    <link href="/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+    
+    
+     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+     <style>
+     .modal-backdrop {
+            z-index: -1;
+        }
+         modDashboardData.modal-body{
+          height: 450px;
+        }
+
+        .modal .modal-dialog { width: 1000px; min-width:1000px}
+
+        .confirmWidth {
+            width: 1000px;
+            margin: 0 auto;
+        }
+   
+  </style>
+
+  
+    
+  
+</head>
+
+
+
+
+<body class="hold-transition sidebar-mini">
+
+
+    
+ <div class="modal fade" id="modHelp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"><span id="myModalLabel">Help</span></h4>
+      </div>
+      <div class="modal-body">
+      <span id="spHelpContent"><img src="/img/loading.gif" /></span>
+      </div>
+      <div class="modal-footer">
+          <span class="pull-left"><span id="Span1" runat="server" class="footer"></span></span>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+     
+    <form id="form1" runat="server">
+        <div>
+           
+        </div>
+  
+  
+           
+        <span id="spTopMenu" runat="server" />
+
+   <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <asp:contentplaceholder id="ContentPlaceHolder1" runat="server" />
+  </div>
+  <!-- /.content-wrapper -->
+
+      <footer class="main-footer">
+          <span class="hidden-xs" id="spUserName" runat="server"></span>
+          <span class="pull-left"><span id="spVersion" runat="server" class="footer"></span></span>
+        <div class="float-right d-none d-sm-block">
+            <b> RodentEye </b> Version 3.0 </div>
+
+        <strong> Copyright <span>&#8482</span> 2020 <a href="#"> Pestech Holding (S) Pte Ltd </a></strong>
+      </footer>
+
+         <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+
+
+
+  <!-- /.control-sidebar -->
+
+<!-- ./wrapper -->
+
+
+ <!-- jQuery -->
+<script src="/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes 
+<script src="/dist/js/demo.js"></script>-->
+
+<script src="/js/bootbox.min.js"></script>
+
+<script>
+    // Robust re-initialization of AdminLTE Sidebar for WebForms PostBacks
+    (function () {
+        var fixSidebar = function() {
+            try {
+                // Ensure jQuery is loaded and Treeview plugin exists
+                if (typeof $ !== 'undefined' && $.fn.Treeview) {
+                    $('[data-widget="treeview"]').Treeview('init');
+                }
+            } catch (e) {
+                console.warn('Sidebar fix failed:', e);
+            }
+        };
+
+        // Run on jQuery ready (Initial Load + Full PostBack)
+        if (typeof $ !== 'undefined') {
+            $(document).ready(fixSidebar);
+        }
+
+        // Run on Partial PostBack (if ScriptManager/UpdatePanel is used)
+        if (typeof Sys !== 'undefined' && Sys.Application) {
+            Sys.Application.add_load(fixSidebar);
+        }
+    })();
+</script>
+
+    </form>
+  </body>
+</html>

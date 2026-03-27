@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="receive_command_data.aspx.cs" Inherits="services_receive_command_data" %>

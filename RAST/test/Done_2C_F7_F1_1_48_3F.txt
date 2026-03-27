@@ -1,0 +1,4 @@
+CMD=2
+TimeStart=20:00
+TimeEnd=08:00
+Gateway=off

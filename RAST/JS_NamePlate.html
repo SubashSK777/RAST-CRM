@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>b-PAC 3.2 Javascript Sample for Extensions</title>
+   
+    <script>
+    function DoPrint() 
+    {
+        var theForm = document.getElementById("ValidForm");
+        var objDoc = new ActiveXObject("bpac.Document");
+        objDoc.Open("SensorQRCode1.lbx");
+        //{
+            objDoc.GetObject("SensorQRCode").Text = "10001";
+            objDoc.StartPrint("",0);
+            objDoc.PrintOut(1,0);
+            objDoc.EndPrint();
+            objDoc.Close();
+    
+        //}
+    }
+
+	
+	</script>  
+</head>
+<body>
+    <form Id="ValidForm">
+
+        <input id="btnPrint" type="button" value="Print" onClick="DoPrint()" />
+        <hr />
+
+    </form></body>
+</html>
